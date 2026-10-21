@@ -22,10 +22,10 @@ explore: sdv_tc_runs_foundation {
   persist_with: sdv_tc_runs_etl_datagroup
 
   # Row-Level Security (Multi-value String Filter (advanced) user attribute)
-  access_filter: {
-    field: sdv_tc_runs_base.tc_domain
-    user_attribute: allowed_sdv_domains
-  }
+  #  access_filter: {
+  #    field: sdv_tc_runs_base.tc_domain
+    #  user_attribute: allowed_sdv_domains
+  #  }
 
   # Join 1: Dynamic Last-Run Deduplication View (Replaces Rank([Admin_Rank],[TC_Id])=1)
   join: fact_tc_dynamic_last_run {
