@@ -6,14 +6,14 @@
 include: "/views/base/sdv_tc_runs_base.view.lkml"
 include: "/views/refinements/+sdv_tc_runs_kpis.view.lkml"
 
- #datagroup: sdv_tc_runs_etl_datagroup {
- #  label: "SDV TC Runs BigQuery Partition ETL Trigger"
-  # sql_trigger:
+ datagroup: sdv_tc_runs_etl_datagroup {
+   label: "SDV TC Runs BigQuery Partition ETL Trigger"
+  sql_trigger:
    #  SELECT MAX(last_modified_time)
    #  FROM `@{gcp_project}.@{bq_dataset}.INFORMATION_SCHEMA.PARTITIONS`
    #  WHERE table_name = 'fact_tc_runs_enriched' ;;
-  # max_cache_age: "12 hours"
- #}
+  max_cache_age: "12 hours"
+ }
 
 explore: sdv_tc_runs_foundation {
   label: "SDV TC Runs — Foundation (Spotfire Migration)"
