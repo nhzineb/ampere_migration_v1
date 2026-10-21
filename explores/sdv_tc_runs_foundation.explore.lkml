@@ -6,26 +6,26 @@
 include: "/views/base/sdv_tc_runs_base.view.lkml"
 include: "/views/refinements/+sdv_tc_runs_kpis.view.lkml"
 
-datagroup: sdv_tc_runs_etl_datagroup {
-  label: "SDV TC Runs BigQuery Partition ETL Trigger"
-  sql_trigger:
-    SELECT MAX(last_modified_time)
-    FROM `@{gcp_project}.@{bq_dataset}.INFORMATION_SCHEMA.PARTITIONS`
-    WHERE table_name = 'fact_tc_runs_enriched' ;;
-  max_cache_age: "12 hours"
-}
+#datagroup: sdv_tc_runs_etl_datagroup {
+#  label: "SDV TC Runs BigQuery Partition ETL Trigger"
+#  sql_trigger:
+ #   SELECT MAX(last_modified_time)
+ #   FROM `@{gcp_project}.@{bq_dataset}.INFORMATION_SCHEMA.PARTITIONS`
+ #   WHERE table_name = 'fact_tc_runs_enriched' ;;
+ # max_cache_age: "12 hours"
+#}
 
 explore: sdv_tc_runs_foundation {
   label: "SDV TC Runs — Foundation (Spotfire Migration)"
   description: "Governed Looker Explore replacing Spotfire SDV_TC_Runs__Foundation.dxp with dynamic Last Run ranking, on-demand ARRAY unnesting, and <1s Aggregate Awareness."
   view_name: sdv_tc_runs_base
-  persist_with: sdv_tc_runs_etl_datagroup
+ # persist_with: sdv_tc_runs_etl_datagroup
 
   # Row-Level Security (Multi-value String Filter (advanced) user attribute)
-  access_filter: {
-    field: sdv_tc_runs_base.tc_domain
-    user_attribute: allowed_sdv_domains
-  }
+#  access_filter: {
+#    field: sdv_tc_runs_base.tc_domain
+ #   user_attribute: allowed_sdv_domains
+ # }
 
   # Join 1: Dynamic Last-Run Deduplication View (Replaces Rank([Admin_Rank],[TC_Id])=1)
   join: fact_tc_dynamic_last_run {
