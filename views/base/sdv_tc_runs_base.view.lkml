@@ -410,7 +410,7 @@ view: fact_tc_dynamic_last_run {
         admin_rank,
         TRUE AS is_dynamic_last_run
       FROM `@{gcp_project}.@{bq_dataset}.OPE_TBL_from_VW_CB_SDV_Spotfire_TC_RUNS_optimised`
-      WHERE {% condition sdv_tc_runs_base.TR_RunDate %} TR_RunDate {% endcondition %}
+      WHERE {% condition sdv_tc_runs_base.tr_run %} TR_RunDate {% endcondition %}
         AND {% condition sdv_tc_runs_base.ts_vehicle_project %} ts_vehicle_project {% endcondition %}
         AND {% condition sdv_tc_runs_base.tc_domain %} tc_domain {% endcondition %}
         AND {% condition sdv_tc_runs_base.ts_milestone %} ts_milestone {% endcondition %}
