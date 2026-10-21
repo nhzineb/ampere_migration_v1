@@ -247,7 +247,7 @@ view: sdv_tc_runs_base {
     label: "TR Run"
     type: time
     timeframes: [raw, date, month, quarter, year]
-    sql: ${TABLE}.tr_run_date ;;
+    sql: ${TABLE}.TR_RunDate ;;
   }
 
   dimension_group: tr_last_run {
@@ -405,18 +405,18 @@ view: fact_tc_dynamic_last_run {
         tr_id AS last_run_tr_id,
         ts_id AS last_run_ts_id,
         tr_result AS last_run_result,
-        tr_run_date AS last_run_date,
+        TR_RunDate AS last_run_date,
         tr_run_week AS last_run_week,
         admin_rank,
         TRUE AS is_dynamic_last_run
       FROM `@{gcp_project}.@{bq_dataset}.OPE_TBL_from_VW_CB_SDV_Spotfire_TC_RUNS_optimised`
-      WHERE {% condition sdv_tc_runs_base.tr_run_date %} tr_run_date {% endcondition %}
+      WHERE {% condition sdv_tc_runs_base.TR_RunDate %} TR_RunDate {% endcondition %}
         AND {% condition sdv_tc_runs_base.ts_vehicle_project %} ts_vehicle_project {% endcondition %}
         AND {% condition sdv_tc_runs_base.tc_domain %} tc_domain {% endcondition %}
         AND {% condition sdv_tc_runs_base.ts_milestone %} ts_milestone {% endcondition %}
       QUALIFY ROW_NUMBER() OVER (
         PARTITION BY tc_id
-        ORDER BY admin_rank ASC, tr_run_date DESC
+        ORDER BY admin_rank ASC, TR_RunDate DESC
       ) = 1 ;;
   }
 
