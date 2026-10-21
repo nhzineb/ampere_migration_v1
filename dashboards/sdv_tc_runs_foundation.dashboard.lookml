@@ -30,7 +30,7 @@
     - name: vehicle_project
       title: "Vehicle Project (TS_Vehicle_Project)"
       type: field_filter
-      model: ampere_sdv_ivv
+     #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       field: sdv_tc_runs_base.ts_vehicle_project
       ui_config:
@@ -40,7 +40,7 @@
     - name: tc_domain
       title: "TC Domain"
       type: field_filter
-      model: ampere_sdv_ivv
+     #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       field: sdv_tc_runs_base.tc_domain
       ui_config:
@@ -50,7 +50,7 @@
     - name: ts_milestone
       title: "TS Milestone"
       type: field_filter
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       field: sdv_tc_runs_base.ts_milestone
       listens_to_filters: [vehicle_project]
@@ -62,7 +62,7 @@
       title: "Horizontal Axis (Spotfire tr.horizontalAxis)"
       type: field_filter
       default_value: "ts_vehicle_project"
-      model: ampere_sdv_ivv
+     #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       field: sdv_tc_runs_base.tr_horizontal_axis_selector
       ui_config:
@@ -73,7 +73,7 @@
       title: "Items Count Metric (Spotfire ItemsCount)"
       type: field_filter
       default_value: "ts_id"
-      model: ampere_sdv_ivv
+     #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       field: sdv_tc_runs_base.items_count_selector
       ui_config:
@@ -88,7 +88,7 @@
       title: "LAST Runs Results (by Dynamic Axis)"
       tab_name: tab_1_tc_last_runs_results
       type: looker_column
-      model: ampere_sdv_ivv
+     #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.dynamic_horizontal_axis]
       measures: [
@@ -112,7 +112,7 @@
       title: "LAST Runs Results (Share by Status)"
       tab_name: tab_1_tc_last_runs_results
       type: looker_pie
-      model: ampere_sdv_ivv
+     #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [fact_tc_dynamic_last_run.last_run_result]
       measures: [sdv_tc_runs_base.last_run_total_tc_count]
@@ -129,7 +129,7 @@
       title: "Last Run Week Evolution"
       tab_name: tab_1_tc_last_runs_results
       type: looker_column
-      model: ampere_sdv_ivv
+     #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [fact_tc_dynamic_last_run.last_run_week, fact_tc_dynamic_last_run.last_run_result]
       pivots: [fact_tc_dynamic_last_run.last_run_result]
@@ -148,7 +148,7 @@
       title: "LAST Runs Results - Detailed View (Cross-Filtered Details-on-Demand)"
       tab_name: tab_1_tc_last_runs_results
       type: looker_grid
-      model: ampere_sdv_ivv
+     #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [
         sdv_tc_runs_base.tc_id,
@@ -179,7 +179,7 @@
       title: "All Runs per Week (Page 2)"
       tab_name: tab_2_tc_all_and_first_runs
       type: looker_column
-      model: ampere_sdv_ivv
+     #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.tr_run_week, sdv_tc_runs_base.tr_result]
       pivots: [sdv_tc_runs_base.tr_result]
@@ -198,7 +198,7 @@
       title: "First Runs per Week (Page 3)"
       tab_name: tab_2_tc_all_and_first_runs
       type: looker_column
-      model: ampere_sdv_ivv
+      ##model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.tr_run_week, sdv_tc_runs_base.tr_result]
       pivots: [sdv_tc_runs_base.tr_result]
@@ -219,7 +219,7 @@
       title: "First Runs Breakdown (Page 3)"
       tab_name: tab_2_tc_all_and_first_runs
       type: looker_pie
-      model: ampere_sdv_ivv
+      ##model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.tr_result]
       measures: [sdv_tc_runs_base.unique_tc_count]
@@ -238,7 +238,7 @@
       title: "ALL Runs Results - Detailed View (Page 2)"
       tab_name: tab_2_tc_all_and_first_runs
       type: looker_grid
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [
         sdv_tc_runs_base.tr_id,
@@ -262,7 +262,7 @@
       title: "First Runs Results - Detailed View (Page 3)"
       tab_name: tab_2_tc_all_and_first_runs
       type: looker_grid
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [
         sdv_tc_runs_base.tc_id,
@@ -289,7 +289,7 @@
       title: "TC with an Auto Request in a TS or not"
       tab_name: tab_3_automation_and_runs
       type: looker_column
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.auto_ts_runs, sdv_tc_runs_base.tc_domain]
       pivots: [sdv_tc_runs_base.auto_ts_runs]
@@ -309,7 +309,7 @@
       title: "LAST Runs Results for TC with an Auto Request"
       tab_name: tab_3_automation_and_runs
       type: looker_column
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.tc_domain]
       measures: [
@@ -333,7 +333,7 @@
       title: "Automation Requests - Detailed View"
       tab_name: tab_3_automation_and_runs
       type: looker_grid
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [
         sdv_tc_runs_base.tc_id,
@@ -361,7 +361,7 @@
       title: "Quality 1/3 — Failed / Blocked Not Linked to an Issue"
       tab_name: tab_4_quality_issues_and_readiness
       type: looker_column
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.tc_domain]
       measures: [sdv_tc_runs_base.failed_blocked_without_issue_tc_count]
@@ -378,7 +378,7 @@
       title: "Quality 1/3 — Failed / Blocked Linked to Closed Issue"
       tab_name: tab_4_quality_issues_and_readiness
       type: looker_column
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.tc_domain]
       measures: [sdv_tc_runs_base.failed_blocked_closed_issue_tc_count]
@@ -395,7 +395,7 @@
       title: "Quality 1/3 — Failed / Blocked Linked to Derogated Issue"
       tab_name: tab_4_quality_issues_and_readiness
       type: looker_column
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.tc_domain]
       measures: [sdv_tc_runs_base.failed_blocked_derogated_issue_tc_count]
@@ -412,7 +412,7 @@
       title: "Quality 1/3 — Failed / Blocked & Issue Linkage Detailed View"
       tab_name: tab_4_quality_issues_and_readiness
       type: looker_grid
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [
         sdv_tc_runs_base.tc_id,
@@ -440,7 +440,7 @@
       title: "Quality 2/3 — TC Not in a TS"
       tab_name: tab_4_quality_issues_and_readiness
       type: looker_column
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.tc_domain]
       measures: [sdv_tc_runs_base.tc_not_in_ts_count]
@@ -457,7 +457,7 @@
       title: "Quality 2/3 — TC Not Ready in a TS"
       tab_name: tab_4_quality_issues_and_readiness
       type: looker_column
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.tc_domain]
       measures: [sdv_tc_runs_base.tc_not_ready_in_ts_count]
@@ -474,7 +474,7 @@
       title: "Quality 2/3 — TC Not in a TS / Not Ready Detailed View"
       tab_name: tab_4_quality_issues_and_readiness
       type: looker_grid
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [
         sdv_tc_runs_base.tc_id,
@@ -501,7 +501,7 @@
       title: "Quality 3/3 — Dynamic CrossTable (RowsAxis x ColumnAxis x ItemsCount)"
       tab_name: tab_5_quality_crosstable_all_data
       type: looker_grid
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [sdv_tc_runs_base.dynamic_rows_axis, sdv_tc_runs_base.dynamic_column_axis]
       pivots: [sdv_tc_runs_base.dynamic_column_axis]
@@ -520,7 +520,7 @@
       title: "All Data - Detailed View"
       tab_name: tab_5_quality_crosstable_all_data
       type: looker_grid
-      model: ampere_sdv_ivv
+      #model: ampere_sdv_ivv
       explore: sdv_tc_runs_foundation
       dimensions: [
         sdv_tc_runs_base.tc_id,
