@@ -4,7 +4,7 @@
 # ==============================================================================
 
 view: sdv_tc_runs_base {
-  sql_table_name: `@{gcp_project}.@{bq_dataset}.fact_tc_runs_enriched` ;;
+  sql_table_name: `@{gcp_project}.@{bq_dataset}.TBL_from_VW_CB_SDV_Spotfire_New_TC_Runs` ;;
 
   # Verified Unique Primary Key (prevents fanout via Looker Symmetric Aggregates)
   dimension: tc_run_grain_pk {
@@ -409,7 +409,7 @@ view: fact_tc_dynamic_last_run {
         tr_run_week AS last_run_week,
         admin_rank,
         TRUE AS is_dynamic_last_run
-      FROM `@{gcp_project}.@{bq_dataset}.fact_tc_runs_enriched`
+      FROM `@{gcp_project}.@{bq_dataset}.TBL_from_VW_CB_SDV_Spotfire_New_TC_Runs`
       WHERE {% condition sdv_tc_runs_base.tr_run_date %} tr_run_date {% endcondition %}
         AND {% condition sdv_tc_runs_base.ts_vehicle_project %} ts_vehicle_project {% endcondition %}
         AND {% condition sdv_tc_runs_base.tc_domain %} tc_domain {% endcondition %}
